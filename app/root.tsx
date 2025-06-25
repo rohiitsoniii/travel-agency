@@ -8,7 +8,11 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+
+import pkg from '@syncfusion/ej2-base';
+const {registerLicense} = pkg;
 import "./app.css";
+
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -23,6 +27,8 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+
+registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY);
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
